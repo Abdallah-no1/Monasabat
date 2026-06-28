@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
-
-
+import {plainPic} from "../assets/assets.js";
 
 function MainPart() {
 
@@ -37,7 +36,7 @@ function MainPart() {
 
     return (
         <div className="w-full h-dvh bg-size-[100%_auto] bg-bottom bg-no-repeat bg-[#67a2e8] flex flex-col justify-center "
-             style={{backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./src/assets/plane.jpg)'}}>
+             style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${plainPic}))`}}>
             {/*TODO: pic as <img> not bg*/}
             <div className="text-center">
                 <h1 className="font-bold text-white text-3xl">
