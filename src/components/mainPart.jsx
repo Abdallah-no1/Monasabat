@@ -12,13 +12,12 @@ function MainPart() {
         seconds: 0,
     });
 
-    const [isSpecial, setIsSpecial] = useState(true);
+    const [isSpecial, setIsSpecial] = useState(false);
 
     useEffect(() => {
         const timer = setInterval(() => {
             const now = new Date().getTime();
             const distance = targetDate - now;
-            console.log(distance);
 
             if (distance > 0) {
                 setTimeLeft({
@@ -28,13 +27,22 @@ function MainPart() {
                     seconds: Math.floor((distance % (1000 * 60)) / 1000),
                 });
             } else {
-                clearInterval(timer); // إيقاف العداد إذا انتهى الوقت
+                clearInterval(timer);
             }
         }, 1000);
 
-        // تنظيف العداد لما المستخدم يطلع من الصفحة
         return () => clearInterval(timer);
-    }, [targetDate]);
+    }, []);
+
+    useEffect(() => {
+        console.log(timeLeft.days);
+        // if (timeLeft.days === 0 && timeLeft.hours === 0 && timeLeft.minutes === 0 && timeLeft.seconds === 0)//todo: make it work
+        if (timeLeft.days === 1 && timeLeft.hours === 1 && timeLeft.minutes === 1 && timeLeft.seconds === 1){
+            setIsSpecial(true)
+        }else {
+            setIsSpecial(false)
+        }
+    }, [timeLeft])
 
     return (
         <div className="w-full h-dvh bg-size-[100%_auto] bg-bottom bg-no-repeat bg-[#67a2e8] flex flex-col justify-center "
@@ -67,8 +75,8 @@ function MainPart() {
                     </div>
                 </div>
                 {/*  لوحة شكر  */}
-                <div className={`text-amber-400 text-2xl mt-4 ${isSpecial ? "block" : "hidden" } `}>
-                    لقيت رقم مميز
+                <div className={`text-amber-400 text-2xl mt-4 absolute align-middle w-full ${isSpecial ? "block" : "hidden" } `}>
+                    واحد ثفر واحد ثفر واحد ثفر واحد ثفر
                     <br/>
                     <span>&#x1F90D;</span>
                     شكرا بابا
