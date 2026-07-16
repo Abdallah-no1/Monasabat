@@ -12,6 +12,8 @@ function MainPart() {
         seconds: 0,
     });
 
+    const [isSpecial, setIsSpecial] = useState(true);
+
     useEffect(() => {
         const timer = setInterval(() => {
             const now = new Date().getTime();
@@ -63,6 +65,13 @@ function MainPart() {
                         <div>{String(timeLeft.seconds).padStart(2, '0')}</div>
                         <div className="text-xl">ثانية</div>
                     </div>
+                </div>
+                {/*  لوحة شكر  */}
+                <div className={`text-amber-400 text-2xl mt-4 ${isSpecial ? "block" : "hidden" } `}>
+                    لقيت رقم مميز
+                    <br/>
+                    <span>&#x1F90D;</span>
+                    شكرا بابا
                 </div>
             </div>
         </div>
