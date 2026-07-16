@@ -4,7 +4,7 @@ import {plainPic} from "../assets/assets.js";
 function MainPart() {
 
     const targetDate = new Date("2026-07-20T21:40:00+03:00").getTime();
-    console.log(targetDate);
+
     const [timeLeft, setTimeLeft] = useState({
         days: 0,
         hours: 0,
