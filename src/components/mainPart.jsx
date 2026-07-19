@@ -3,7 +3,7 @@ import {plainPic} from "../assets/assets.js";
 
 function MainPart() {
 
-    const targetDate = new Date("2026-07-20T21:40:00+03:00").getTime();
+    const targetDate = new Date("2026-07-20T23:00:00+03:00").getTime();
 
     const [timeLeft, setTimeLeft] = useState({
         days: 0,
@@ -52,7 +52,7 @@ function MainPart() {
             {/*TODO: pic as <img> not bg*/}
             <div className="text-center">
                 <h1 className="font-bold text-white text-3xl">
-                    لم يتبقى الكثير <br/> رحلتك القادمة تبدأ بعد
+                    لم يتبقى الكثير <br/> الهبوط يبدأ بعد
                 </h1>
                 {/* تصميم العداد الزمني */}
                 <div className="flex justify-center text-white text-7xl">
@@ -81,7 +81,7 @@ function MainPart() {
                     صفر واحد صفر واحد صفر واحد صفر واحد
                     <br/>
                     <span>&#x1F90D;</span>
-                    شكرا بابا
+                    شكرا جميعا
                 </div>
             </div>
         </div>
