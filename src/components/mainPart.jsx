@@ -36,6 +36,16 @@ function MainPart() {
         return () => clearInterval(timer);
     }, [targetDate]);
 
+    useEffect(() => {
+        console.log(timeLeft.days);
+        // if (timeLeft.days === 0 && timeLeft.hours === 0 && timeLeft.minutes === 0 && timeLeft.seconds === 0)//todo: make it work
+        if (timeLeft.days === 1 && timeLeft.hours === 1 && timeLeft.minutes === 1 && timeLeft.seconds === 1){
+            setIsSpecial(true)
+        }else {
+            setIsSpecial(false)
+        }
+    }, [timeLeft])
+
     return (
         <div className="w-full h-dvh bg-size-[100%_auto] bg-bottom bg-no-repeat bg-[#67a2e8] flex flex-col justify-center "
              style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${plainPic})`}}>
@@ -68,7 +78,7 @@ function MainPart() {
                 </div>
                 {/*  لوحة شكر  */}
                 <div className={`text-amber-400 text-2xl mt-4 ${isSpecial ? "block" : "hidden" } `}>
-                    لقيت رقم مميز
+                    صفر واحد صفر واحد صفر واحد صفر واحد
                     <br/>
                     <span>&#x1F90D;</span>
                     شكرا بابا
