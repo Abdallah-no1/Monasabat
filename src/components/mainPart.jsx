@@ -12,7 +12,7 @@ function MainPart() {
         seconds: 0,
     });
 
-    const [isSpecial, setIsSpecial] = useState(true);
+    const [isSpecial, setIsSpecial] = useState(false);
 
     useEffect(() => {
         const timer = setInterval(() => {
